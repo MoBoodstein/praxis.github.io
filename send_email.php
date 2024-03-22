@@ -4,7 +4,7 @@ require_once 'config.php';
 
 require_once __DIR__ . '/vendor/autoload.php'; // Einbinden der autoload.php-Datei aus dem Vendor-Verzeichnis
 
-require_once __DIR__ . '/vendor/autoload.php'; // Passe den Pfad zur autoload.php an
+// Laden der Umgebungsvariablen aus der .env-Datei
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
@@ -39,10 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Server-Einstellungen
         $mail->SMTPDebug = 2; // Aktivieren Sie Debugging für detaillierte Ausgaben
         $mail->isSMTP(); // Verwenden Sie SMTP
-        $mail->Host = getConfig('smtp_host'); // Setzen Sie den SMTP-Server für den Versand von E-Mails
+        $mail->Host = $_ENV['SMTP_HOST']; // Setzen Sie den SMTP-Server für den Versand von E-Mails
         $mail->SMTPAuth = true; // Aktivieren Sie die SMTP-Authentifizierung
-        $mail->Username = getConfig('smtp_username'); // SMTP-Benutzername
-        $mail->Password = getConfig('smtp_password'); // SMTP-Passwort
+        $mail->Username = $_ENV['SMTP_USERNAME']; // SMTP-Benutzername
+        $mail->Password = $_ENV['SMTP_PASSWORD']; // SMTP-Passwort
         $mail->SMTPSecure = 'tls'; // Aktivieren Sie die Verschlüsselung; 'tls' empfohlen
         $mail->Port = 587; // TCP-Port, über den Sie sich mit dem SMTP-Server verbinden möchten
 
