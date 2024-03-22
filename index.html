@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ihre Praxis - Startseite</title>
+  <style>
+    /* Platzieren Sie Ihre benutzerdefinierten CSS-Stile hier */
+
+  /* Platzieren Sie Ihren vorhandenen CSS-Code hier */
+    
+    /* Hier fügen Sie den neuen CSS-Code für die keyword-box ein */
+       .keyword-box {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Schatten für einen eleganten Look */
+    }
+
+    .keyword-box button.accordion {
+      width: 100%;
+      text-align: left;
+      padding: 15px;
+      background-color: #f7f7f7;
+      border: none;
+      outline: none;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      border-top-left-radius: 10px; /* Runden der Ecken nur oben links */
+      border-top-right-radius: 10px; /* Runden der Ecken nur oben rechts */
+      border-bottom: 1px solid #ccc; /* Hinzufügen einer Linie am unteren Rand */
+      font-size: 18px; /* Textgröße erhöhen */
+    }
+
+    .keyword-box button.accordion:hover {
+      background-color: #e0e0e0;
+    }
+
+    .keyword-box .panel {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #ffffff;
+      border-bottom-left-radius: 10px; /* Runden der Ecken nur unten links */
+      border-bottom-right-radius: 10px; /* Runden der Ecken nur unten rechts */
+    }
+
+    .keyword-box .panel p {
+      font-size: 15px;
+      line-height: 1.5; /* Verbessert die Lesbarkeit des Textes */
+    }
+
+     /* Kontakformular */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    
+    textarea {
+      height: 150px;
+    }
+    
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      display: block; /* Um die Schaltflächen untereinander anzuordnen */
+      width: 100%; /* Vollständige Breite für die Schaltflächen */
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero {
+      height: 100vh;
+      background-image: url('hero-image.jpg'); /* Ersetzen Sie 'hero-image.jpg' durch den Dateinamen Ihres Hero-Bildes */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      opacity: 0.8; /* Eine geringe Transparenz, um den Text besser lesbar zu machen */
+      transition: opacity 1s ease;
+      z-index: 1; /* Sicherstellen, dass der Text über dem Hintergrundbild liegt */
+    }
+
+    .hero-content h1 {
+      font-size: 48px; /* Größere Schriftgröße für die Überschrift */
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 1000;
+      transition: background-color 0.5s ease;
+      padding: 20px 0; /* Größere Padding für die Navigationsleiste */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Schatten für die Navigationsleiste hinzufügen */
+    }
+
+    .navbar-scrolled {
+      background-color: #fff; /* Hintergrundfarbe der Navigationsleiste beim Scrollen */
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .navbar li {
+      display: inline-block;
+      margin: 0 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px; /* Größere Schriftgröße für die Navigationslinks */
+      font-weight: bold; /* Fettdruck für die Navigationslinks */
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #666;
+    }
+
+    .section {
+      padding: 50px 0;
+      text-align: center; /* Zentriert den Inhalt der Sektion */
+      border-top: 2px solid #ccc; /* Hinzufügen einer sichtbaren Begrenzung oben */
+      border-bottom: 2px solid #ccc; /* Hinzufügen einer sichtbaren Begrenzung unten */
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      text-align: center;
+    }
+
+    .about-content img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .accordion {
+      border: none;
+      outline: none;
+      transition: 0.4s;
+      cursor: pointer;
+      margin-bottom: 10px;
+      text-align: left;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .panel {
+      display: none;
+      overflow: hidden;
+      padding: 0 18px;
+      background-color: #f1f1f1;
+    }
+
+    .panel p {
+      margin: 10px 0;
+    }
+
+footer {
+      background-color: rgba(255, 255, 255, 0.8); /* Transparente Hintergrundfarbe */
+      color: #333;
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 1000; /* Stellen Sie sicher, dass die Fußzeile über anderen Elementen liegt */
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Schatten für die Fußzeile */
+      transition: background-color 0.5s ease; /* Animieren Sie die Hintergrundfarbe */
+    }
+  </style>
+  <script>
+    // Platzieren Sie Ihre benutzerdefinierten JavaScript-Funktionen hier
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbarLinks = document.querySelectorAll('.navbar a');
+      
+      navbarLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault(); // Verhindert das Standardverhalten des Links (Scrollen zur Ankerposition)
+          const targetId = this.getAttribute('href').substring(1); // Entfernt das `#`-Zeichen vom Ankerziel
+          const targetSection = document.getElementById(targetId);
+          const offsetTop = targetSection.offsetTop; // Y-Position des Ankers relativ zum Dokument
+
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth' // Scroll-Animation
+          });
+        });
+      });
+
+      // Akkordeon-Funktion
+      const acc = document.getElementsByClassName("accordion");
+      let i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          const panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    });
+    
+ window.addEventListener('scroll', function() {
+      var footer = document.getElementById('footer');
+      var scrollPosition = window.innerHeight + window.scrollY;
+      var documentHeight = document.body.offsetHeight;
+
+      if (scrollPosition >= documentHeight) {
+        footer.style.bottom = '0'; // Zeigt die Fußzeile, wenn zum Ende der Seite gescrollt wird
+      } else {
+        footer.style.bottom = '-100px'; // Versteckt die Fußzeile, wenn nicht am Ende der Seite
+      }
+    });
+
+  </script>
+</head>
+<body>
+  <!-- Hero-Image mit großer Landschaftsaufnahme und Animation beim Scrollen -->
+  <div class="hero">
+    <!-- Hier sollte das Hero-Image eingefügt werden -->
+    <div class="hero-content">
+      <h1>Willkommen in unserer Praxis</h1>
+      <p>Finden Sie hier Ruhe und Unterstützung</p>
+    </div>
+  </div>
+
+  <!-- Navigationsleiste -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#process">Ablauf</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Über mich Sektion -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>Über mich</h2>
+      <div class="about-content">
+         <img src="portrait.jpg" alt="Porträtfoto">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lacus urna. Vestibulum ac nisl eu dui ultrices efficitur. Nulla facilisi. Proin hendrerit, purus nec interdum fringilla, ipsum quam malesuada nisl, in tristique dolor leo eu tellus. Phasellus lacinia mauris id lacinia dignissim.</p> 
+<!-- Ablauf Sektion -->
+<section id="process" class="section">
+  <div class="container">
+    <h2>Ablauf</h2>
+    <!-- Akkordeon für den Prozess -->
+    <div class="keyword-box">
+      <button class="accordion">Was ist Verhaltenstherapie?</button>
+      <div class="panel">
+        <p>Hier können Sie Stichworte zur Psychotherapie eingeben und weitere Informationen hinzufügen.</p>
+      </div>
+    </div>
+    <div class="keyword-box">
+      <button class="accordion">Beantragung von Psychotherapie</button>
+      <div class="panel">
+        <p>Hier können Sie Informationen zur Beantragung von Psychotherapie eingeben und weitere Details bereitstellen.</p>
+      </div>
+    </div>
+    <!-- Fügen Sie weitere Akkordeons für den Prozess hinzu, falls erforderlich -->
+  </div>
+</section>
+   <!-- Kontaktformular -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Kontakt</h2>
+      <form action="send_email.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Nachricht:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Nachricht senden">
+      </form>
+    </div>
+  </section>
+  <!-- Fußzeile -->
+  <footer>
+    <div class="container">
+      &copy; 2024 Ihre Praxis. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+
+</body>
+</html>
